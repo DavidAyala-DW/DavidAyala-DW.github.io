@@ -1,0 +1,53 @@
+{
+    
+    "name": "DavidAyala ",
+    "short_name": "Portfolio",
+    "start_url": "/index.html",
+    "display": "standalone", 
+    "background_color": "#FFFFFF",
+    "theme_color": "#252b31",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+        "src": "build/icons/logo (1).png",
+        "type": "image/png",
+        "sizes": "72x72"
+        },
+        {
+        "src": "build/icons/logo (2).png",
+        "type": "image/png",
+        "sizes": "120x120"
+        },
+        {
+        "src": "build/icons/logo (3).png",
+        "type": "image/png",
+        "sizes": "128x128"
+        },
+        {
+        "src": "build/icons/logo (4).png",
+        "type": "image/png",
+        "sizes": "144x144"
+        },
+        {
+        "src": "build/icons/logo (5).png",
+        "type": "image/png",
+        "sizes": "152x152"
+        },
+        {
+        "src": "build/icons/logo (6).png",
+        "type": "image/png",
+        "sizes": "196x196"
+        },
+        {
+        "src": "build/icons/logo (7).png",
+        "type": "image/png",
+        "sizes": "256x256"
+        },
+        {
+        "src": "build/icons/logo (8).png",
+        "type": "image/png",
+        "sizes": "512x512"
+        }
+    ]
+    
+}
