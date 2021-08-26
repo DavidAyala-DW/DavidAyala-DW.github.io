@@ -22,8 +22,8 @@ const files=[
     "build/img/profile6.webp",
     "build/CV David.pdf",
 
-    "https://unpkg.com/swiper/swiper-bundle.css",
-    "https://unpkg.com/swiper/swiper-bundle.min.css",
+    "/build/css/swiper.css",
+    "/build/css/swiper.min.css",
     "build/css/app.css",
 
     "build/js/pwa.js",
