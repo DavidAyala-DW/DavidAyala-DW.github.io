@@ -107,6 +107,7 @@ function swiper_portfolio(){
           el: '.swiper-scrollbar',
         },
     });
+    return swiper;
 }
 
 function fronted_event(e){
