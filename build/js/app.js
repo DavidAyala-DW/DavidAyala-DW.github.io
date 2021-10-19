@@ -10,41 +10,68 @@ document.addEventListener("DOMContentLoaded",()=>{
     fake_message();
 })
 
+function insertIcons(){
+
+    const sun_moon_menu=document.querySelectorAll(".darkmodeIcon");
+
+    const body=document.querySelector("body");
+    let src;
+
+    body.classList.contains("darkmode") ? src="sun" : null;
+    !body.classList.contains("darkmode") ? src="moon" : null;
+
+    sun_moon_menu.forEach(child=>{
+        isInPage(child)? child.innerHTML=icons[src] : null;
+    });
+
+}
+
+
 function darkmode(){
 
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
 
         const body=document.querySelector("body");
         body.classList.add("darkmode");
+        insertIcons();
     
-        const sun_moon = document.querySelector("#icon-sun-moon");
-        const sun_moon_menu=document.querySelector(".sun_moon_bar");
-        
+        document.onclick = (e) => {
 
-        sun_moon.innerHTML=icons.sun;
-        sun_moon_menu.innerHTML=icons.sun;
+            if(e.target.classList.contains("darkmodeIcon")||e.target.parentElement.classList.contains("darkmodeIcon")||e.target.parentElement.parentElement.classList.contains("darkmodeIcon")){
 
-        sun_moon.onclick=()=>{
+                if(!body.classList.contains("darkmode")){
+                    body.classList.add("darkmode");
+                    insertIcons();
+                }else{
+                    body.classList.remove("darkmode");
+                    insertIcons();
+                }
+    
 
-            if(body.classList.contains("darkmode")){
-                body.classList.remove("darkmode");
-                sun_moon.innerHTML=icons.moon;
-            }else{
-                body.classList.add("darkmode");
-                sun_moon.innerHTML=icons.sun;
-            }
-
-        };
-
-        sun_moon_menu.onclick=()=>{
-            if(body.classList.contains("darkmode")){
-                body.classList.remove("darkmode");
-                sun_moon_menu.innerHTML=icons.moon;
-            }else{
-                body.classList.add("darkmode");
-                sun_moon_menu.innerHTML=icons.sun;
             }
         }
+
+    }else{
+
+        const body=document.querySelector("body");
+        insertIcons();
+
+        document.onclick = (e) => {
+
+            if(e.target.classList.contains("darkmodeIcon")||e.target.parentElement.classList.contains("darkmodeIcon")||e.target.parentElement.parentElement.classList.contains("darkmodeIcon")){
+
+                if(!body.classList.contains("darkmode")){
+                    body.classList.add("darkmode");
+                    insertIcons();
+                }else{
+                    body.classList.remove("darkmode");
+                    insertIcons();
+                }
+    
+
+            }
+        }
+
     }
 
 }
@@ -432,3 +459,7 @@ function fake_message(){
         message.textContent=fake.innerText;
     })
 }
+
+function isInPage(node) { //Funcion que nos identificara si existe un nodo o no para poder hacer las evaluaciones correspondientes
+    return (node === document.body) ? false : document.body.contains(node);
+};
